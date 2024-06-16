@@ -38,8 +38,9 @@ export class ProductEditComponent {
 
   updateProduct() {
     this.productService.updateProduct(this.product).subscribe(
+      
       response => {
-        
+        this.router.navigate(['/product-list']);
         // handle successful update
         console.log('Product updated successfully', response);
       },
@@ -47,6 +48,7 @@ export class ProductEditComponent {
         // handle error
         console.log('Error updating product', error);
       }
+      
     );
   }
 }
